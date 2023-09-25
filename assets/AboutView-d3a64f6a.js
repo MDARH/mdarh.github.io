@@ -1,0 +1,1 @@
+import{_ as e,o,c as t,a as n}from"./index-18f5ab6e.js";const c={},s=n("h1",{className:"text-8xl font-bold underline"}," Hello world! Tailwind Not working ",-1),a=[s];function r(l,_){return o(),t("div",null,a)}const i=e(c,[["render",r]]);export{i as default};
