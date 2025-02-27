@@ -1,0 +1,9 @@
+/* -----------------------------------------------
+/* Author : Vincent Garreau  - vincentgarreau.com
+/* MIT license: http://opensource.org/licenses/MIT
+/* Demo / Generator : vincentgarreau.com/particles.js
+/* GitHub : github.com/VincentGarreau/particles.js
+/* How to use? : Check the GitHub README
+/* v2.0.0
+/* ----------------------------------------------- */
+!function(a,b){"use strict";function c(){function c(){requestAnimationFrame(c);var a=h.width/2,d=h.height/2;g.clearRect(0,0,h.width,h.height),g.fillStyle="rgba(255, 255, 255, 0.8)",g.fillRect(a-1,d-1,2,2),g.beginPath();for(var e=0;e<i.length;e++){var f=i[e];g.moveTo(f.x,f.y),g.lineTo(a,d),g.strokeStyle="rgba(255, 255, 255, "+f.alpha+")",g.stroke(),f.alpha-=.05,f.x+=f.vx,f.y+=f.vy,f.vx*=.98,f.vy*=.98,(f.alpha<=0||f.x-a>=h.width/2||f.x-a<=-h.width/2||f.y-d>=h.height/2||f.y-d<=-h.height/2)&&(f.x=a+Math.random()*h.width/4-h.width/8,f.y=d+Math.random()*h.height/4-h.height/8,f.vx=(Math.random()-.5)*h.width/150,f.vy=(Math.random()-.5)*h.height/150,f.alpha=1)}}function d(){h.width=b.innerWidth,h.height=b.innerHeight}var e=20,f=.3,g=h.getContext("2d"),i=[];!function(){for(var a=0;e>a;a++)i.push({x:Math.random()*h.width,y:Math.random()*h.height,vx:(Math.random()-.5)*f,vy:(Math.random()-.5)*f,alpha:1})}(),b.addEventListener("resize",d,!1),c()}var d=function(){var a=document.createElement("canvas");return!!b.WebGLRenderingContext&&(a.getContext("webgl")||a.getContext("experimental-webgl"))};if(d()){var e=document.createElement("canvas");e.style.display="block",e.style.position="fixed",e.style.top="0",e.style.left="0",e.style.zIndex="-1",document.body.appendChild(e);var f=e.getContext("webgl")||e.getContext("experimental-webgl"),g=-1,h=document.createElement("canvas");h.style.display="block",document.body.appendChild(h),c()}}(window,document);
