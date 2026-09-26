@@ -5,6 +5,7 @@ import { featuredProjectsForSite } from '@/lib/projects';
 import ProjectCardSite from '@/components/ProjectCardSite.vue';
 import ProjectDetailModal from '@/components/ProjectDetailModal.vue';
 import CertificationsSection from '@/components/CertificationsSection.vue';
+import SocialLinkIcon from '@/components/SocialLinkIcon.vue';
 
 const isDarkMode = ref(localStorage.getItem('darkMode') === 'true' || false);
 const featuredProjects = computed(() => featuredProjectsForSite(profileData.projects));
@@ -239,15 +240,16 @@ onMounted(async () => {
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div v-for="skill in profileData.skills" :key="skill.name" 
                        class="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                      <div class="flex justify-between mb-1">
+                      <div class="flex justify-between mb-1 gap-2">
                           <span class="font-primary text-lg">{{ skill.name }}</span>
-                          <span class="text-body">{{ skill.level }}%</span>
+                          <span v-if="skill.level != null" class="text-body shrink-0">{{ skill.level }}%</span>
                       </div>
                       <p class="text-xs text-gray-500 dark:text-gray-400 mb-2">{{ skill.category }}</p>
-                      <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5">
+                      <div v-if="skill.level != null" class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5">
                           <div class="bg-blue-600 h-2.5 rounded-full transition-all duration-1000" 
                                :style="{ width: skill.level + '%' }"></div>
                       </div>
+                      <p v-else class="text-xs text-gray-500 dark:text-gray-400 italic">Listed skill</p>
                   </div>
               </div>
           </div>
@@ -263,7 +265,12 @@ onMounted(async () => {
                      class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
                       Email Me
                   </a>
-                  <a v-if="profileData.links.linkedin" :href="profileData.links.linkedin" target="_blank" 
+                  <a v-if="profileData.links.whatsapp" :href="profileData.links.whatsapp" target="_blank" rel="noopener noreferrer"
+                     class="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors">
+                      <SocialLinkIcon name="whatsapp" class="w-5 h-5" />
+                      WhatsApp
+                  </a>
+                  <a v-if="profileData.links.linkedin" :href="profileData.links.linkedin" target="_blank" rel="noopener noreferrer"
                      class="px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
                       LinkedIn
                   </a>

@@ -1,6 +1,8 @@
 <script setup>
 import { computed } from 'vue'
+import { EnvelopeIcon } from '@heroicons/vue/24/solid'
 import profile from '@profile'
+import SocialLinkIcon from '../components/SocialLinkIcon.vue'
 
 const linkEntries = computed(() => {
   const labels = {
@@ -50,10 +52,11 @@ const getSocialIconColor = (key) => {
           <a
             v-if="profile.email"
             :href="`mailto:${profile.email}`"
-            class="flex items-center space-x-3 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+            class="flex items-center gap-3 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
           >
-            <span class="text-gray-600 dark:text-gray-300 font-medium">Email</span>
-            <span class="text-gray-800 dark:text-white text-body truncate">{{ profile.email }}</span>
+            <EnvelopeIcon class="w-6 h-6 shrink-0 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+            <span class="text-gray-600 dark:text-gray-300 font-medium shrink-0">Email</span>
+            <span class="text-gray-800 dark:text-white text-body truncate ml-auto">{{ profile.email }}</span>
           </a>
 
           <a
@@ -62,10 +65,11 @@ const getSocialIconColor = (key) => {
             :href="item.url"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center space-x-3 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors group"
+            class="flex items-center gap-3 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors group"
           >
-            <span :class="getSocialIconColor(item.key)" class="font-medium">{{ item.label }}</span>
-            <span class="text-gray-800 dark:text-white text-body truncate group-hover:text-opacity-90">
+            <SocialLinkIcon :name="item.key" :class="['w-6 h-6 shrink-0', getSocialIconColor(item.key)]" />
+            <span :class="getSocialIconColor(item.key)" class="font-medium shrink-0">{{ item.label }}</span>
+            <span class="text-gray-800 dark:text-white text-body truncate group-hover:text-opacity-90 ml-auto">
               {{ item.username }}
             </span>
           </a>

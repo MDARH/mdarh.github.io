@@ -7,7 +7,7 @@
     "github": "https://github.com/mdarh",
     "linkedin": "https://www.linkedin.com/in/mdarh411",
     "website": "https://mdarh.github.io",
-    "whatsapp": "https://wa.me/01813678273",
+    "whatsapp": "https://wa.me/8801813678273",
     "telegram": "https://t.me/mdarh411",
     "facebook": "https://fb.me/hassan411",
     "youtube": "https://youtube.com/mdarh"
@@ -72,6 +72,61 @@
       "name": "Git",
       "category": "Tools",
       "level": 85
+    },
+    {
+      "name": "FilamentPHP",
+      "category": "Backend",
+      "level": null
+    },
+    {
+      "name": "HTML5",
+      "category": "Frontend",
+      "level": 95
+    },
+    {
+      "name": "CSS3",
+      "category": "Frontend",
+      "level": 95
+    },
+    {
+      "name": "Breeze",
+      "category": "Backend",
+      "level": null
+    },
+    {
+      "name": "Laragon",
+      "category": "Tools",
+      "level": null
+    },
+    {
+      "name": "cPanel/WHM",
+      "category": "DevOps",
+      "level": null
+    },
+    {
+      "name": "aaPanel",
+      "category": "DevOps",
+      "level": null
+    },
+    {
+      "name": "GitHub",
+      "category": "Tools",
+      "level": null
+    },
+    {
+      "name": "VS Code",
+      "category": "Tools",
+      "level": null
+    },
+    {
+      "name": "Ubuntu",
+      "category": "OS",
+      "level": null
+    },
+    {
+      "name": "Windows",
+      "category": "OS",
+      "level": null
     }
   ],
   "projects": [
@@ -196,7 +251,9 @@
     {
       "name": "CapturedByHassan",
       "description": "A FreelancerOS module that auto-posts to and auto-replies on Facebook pages.",
-      "tech": ["Laravel"],
+      "tech": [
+        "Laravel"
+      ],
       "repo_url": null,
       "live_url": null,
       "private": true,
@@ -220,7 +277,7 @@
       "private": true,
       "status": "in-progress",
       "featured": false,
-      "visible": true,
+      "visible": false,
       "image": "./images/projects/akhalalfood/akfood-1.png"
     },
     {
@@ -288,7 +345,7 @@
       "private": true,
       "status": "in-progress",
       "featured": false,
-      "visible": true,
+      "visible": false,
       "image": "./images/projects/pathshala-cbs/Screenshot 2023-04-30 222444.png"
     },
     {
@@ -305,7 +362,7 @@
       "private": true,
       "status": "in-progress",
       "featured": false,
-      "visible": true,
+      "visible": false,
       "image": "./images/projects/zippyfootware/screenshot-1.png"
     },
     {
@@ -321,8 +378,8 @@
       "live_url": "https://ssc1982.org/",
       "private": true,
       "status": "live",
-      "featured": true,
-      "visible": true,
+      "featured": false,
+      "visible": false,
       "image": "./images/projects/ssc1982/screenshot-1.png"
     },
     {
@@ -338,7 +395,7 @@
       "private": true,
       "status": "live",
       "featured": false,
-      "visible": true,
+      "visible": false,
       "image": "./images/projects/amdadiya/screenshot-1.png"
     },
     {
@@ -403,7 +460,7 @@
       "private": true,
       "status": "live",
       "featured": false,
-      "visible": true,
+      "visible": false,
       "image": "./images/projects/dcrfoundation/screenshot-1.png"
     },
     {
@@ -435,7 +492,7 @@
       "private": true,
       "status": "live",
       "featured": false,
-      "visible": true,
+      "visible": false,
       "image": "./images/projects/fenirkal/screenshot-1.png"
     },
     {
@@ -451,7 +508,7 @@
       "private": true,
       "status": "live",
       "featured": false,
-      "visible": true,
+      "visible": false,
       "image": "./images/projects/frentors/screenshot-1.png"
     },
     {
@@ -467,7 +524,7 @@
       "private": true,
       "status": "live",
       "featured": false,
-      "visible": true,
+      "visible": false,
       "image": "./images/projects/graffitybangladesh/screenshot-1.png"
     },
     {
@@ -483,7 +540,7 @@
       "private": true,
       "status": "live",
       "featured": false,
-      "visible": true,
+      "visible": false,
       "image": "./images/projects/manageritalia/screenshot-1.png"
     },
     {
@@ -499,7 +556,7 @@
       "private": true,
       "status": "live",
       "featured": false,
-      "visible": true,
+      "visible": false,
       "image": "./images/projects/myassetbd/screenshot-1.png"
     },
     {
@@ -525,7 +582,12 @@
       "name": "Complete Web Development Course",
       "issuer": "Programming Hero",
       "description": "Certificate of Achievement awarded to ABDUR RAZZAQUE by Programming Hero for the successful completion of the Complete Web Development Course covering JavaScript, HTML, CSS, and React with several projects built. Six-month MERN stack course.",
-      "skills": ["JavaScript", "HTML", "CSS", "React"],
+      "skills": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "React"
+      ],
       "credential_id": "WEB7-1314",
       "batch": "Batch 07",
       "issued": null,

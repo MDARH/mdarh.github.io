@@ -17,7 +17,11 @@
       "properties": {
         "github": { "type": "string", "format": "uri" },
         "linkedin": { "type": "string", "format": "uri" },
-        "website": { "type": "string", "format": "uri" }
+        "website": { "type": "string", "format": "uri" },
+        "whatsapp": { "type": "string", "format": "uri" },
+        "telegram": { "type": "string", "format": "uri" },
+        "facebook": { "type": "string", "format": "uri" },
+        "youtube": { "type": "string", "format": "uri" }
       }
     },
     "skills": {
@@ -25,11 +29,11 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["name", "category", "level"],
+        "required": ["name", "category"],
         "properties": {
           "name": { "type": "string" },
           "category": { "type": "string" },
-          "level": { "type": "number", "minimum": 0, "maximum": 100 }
+          "level": { "type": ["number", "null"], "minimum": 0, "maximum": 100 }
         }
       }
     },
