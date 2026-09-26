@@ -20,11 +20,13 @@ if (!Array.isArray(profile.skills)) fail('skills must be an array')
 if (!Array.isArray(profile.projects)) fail('projects must be an array')
 
 for (const [i, s] of profile.skills.entries()) {
-  for (const f of ['name', 'category', 'level']) {
+  for (const f of ['name', 'category']) {
     if (!(f in s)) fail(`skills[${i}] missing "${f}"`)
   }
-  if (typeof s.level !== 'number' || s.level < 0 || s.level > 100) {
-    fail(`skills[${i}].level must be 0-100`)
+  if ('level' in s && s.level != null) {
+    if (typeof s.level !== 'number' || s.level < 0 || s.level > 100) {
+      fail(`skills[${i}].level must be 0-100 or null`)
+    }
   }
 }
 
