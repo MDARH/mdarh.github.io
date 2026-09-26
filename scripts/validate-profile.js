@@ -49,4 +49,31 @@ for (const [i, p] of profile.projects.entries()) {
   }
 }
 
-console.log(`profile.json OK (${profile.projects.length} projects, ${profile.skills.length} skills)`)
+if (profile.certifications != null) {
+  if (!Array.isArray(profile.certifications)) fail('certifications must be an array when present')
+  for (const [i, c] of profile.certifications.entries()) {
+    for (const f of [
+      'name',
+      'issuer',
+      'description',
+      'skills',
+      'credential_id',
+      'batch',
+      'issued',
+      'image_url',
+      'file_url',
+      'featured',
+      'visible'
+    ]) {
+      if (!(f in c)) fail(`certifications[${i}] missing "${f}"`)
+    }
+    if (c.issued !== null && typeof c.issued !== 'string') {
+      fail(`certifications[${i}].issued must be null or an ISO date string`)
+    }
+  }
+}
+
+const certCount = profile.certifications?.length ?? 0
+console.log(
+  `profile.json OK (${profile.projects.length} projects, ${profile.skills.length} skills, ${certCount} certifications)`
+)

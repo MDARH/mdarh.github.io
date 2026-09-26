@@ -112,6 +112,8 @@ Validate before build: `npm run validate:profile` (also runs in `build:pages`). 
 
 **Site rendering:** projects with `visible: false` are omitted; featured items appear first; status badges (Live / In progress / Planned); if `private` and no `live_url`, show a Private badge.
 
+Optional **`certifications[]`** (additive; README Action can ignore): `{ name, issuer, description, skills[], credential_id, batch, issued (null if unknown), image_url, file_url, featured, visible }` — absolute `https://mdarh.github.io/...` URLs for assets under `public/certificates/`.
+
 Experience page copy is in `src/data/experience.json` (not part of `profile.json`).
 
 ## 🔄 Making Updates

@@ -63,6 +63,39 @@
           "image": { "type": ["string", "null"] }
         }
       }
+    },
+    "certifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "issuer",
+          "description",
+          "skills",
+          "credential_id",
+          "batch",
+          "issued",
+          "image_url",
+          "file_url",
+          "featured",
+          "visible"
+        ],
+        "properties": {
+          "name": { "type": "string" },
+          "issuer": { "type": "string" },
+          "description": { "type": "string" },
+          "skills": { "type": "array", "items": { "type": "string" } },
+          "credential_id": { "type": "string" },
+          "batch": { "type": "string" },
+          "issued": { "type": ["string", "null"], "format": "date" },
+          "image_url": { "type": "string", "format": "uri" },
+          "file_url": { "type": "string", "format": "uri" },
+          "featured": { "type": "boolean" },
+          "visible": { "type": "boolean" }
+        }
+      }
     }
   }
 }

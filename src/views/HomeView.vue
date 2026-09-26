@@ -4,6 +4,7 @@ import profileData from '@profile';
 import { featuredProjectsForSite } from '@/lib/projects';
 import ProjectCardSite from '@/components/ProjectCardSite.vue';
 import ProjectDetailModal from '@/components/ProjectDetailModal.vue';
+import CertificationsSection from '@/components/CertificationsSection.vue';
 
 const isDarkMode = ref(localStorage.getItem('darkMode') === 'true' || false);
 const featuredProjects = computed(() => featuredProjectsForSite(profileData.projects));
@@ -228,6 +229,8 @@ onMounted(async () => {
               </div>
           </div>
       </section>
+
+      <CertificationsSection />
 
       <!-- Skills & Experience Section -->
       <section id="skills" class="py-20 px-4 bg-gray-50 dark:bg-gray-900">

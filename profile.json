@@ -523,5 +523,20 @@
       "visible": false,
       "image": "./images/projects/bdapex/screenshot-1.png"
     }
+  ],
+  "certifications": [
+    {
+      "name": "Complete Web Development Course",
+      "issuer": "Programming Hero",
+      "description": "Certificate of Achievement awarded to ABDUR RAZZAQUE by Programming Hero for the successful completion of the Complete Web Development Course covering JavaScript, HTML, CSS, and React with several projects built. Six-month MERN stack course.",
+      "skills": ["JavaScript", "HTML", "CSS", "React"],
+      "credential_id": "WEB7-1314",
+      "batch": "Batch 07",
+      "issued": null,
+      "image_url": "https://mdarh.github.io/certificates/programming-hero-web-development.webp",
+      "file_url": "https://mdarh.github.io/certificates/programming-hero-web-development.pdf",
+      "featured": true,
+      "visible": true
+    }
   ]
 }

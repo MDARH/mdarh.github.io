@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import experienceData from '@/data/experience.json';
+import CertificationsSection from '@/components/CertificationsSection.vue';
 
 const experience = experienceData.experience;
 
@@ -44,10 +45,16 @@ const courses = ref([
   },
   {
     year: '2023',
-    title: 'Web Development Course',
+    title: 'Complete Web Development Course',
     institution: 'Programming Hero',
-    status: 'Ongoing',
-    technologies: 'HTML, CSS, JavaScript, Bootstrap, Tailwind, React, Vite, React Router, Firebase, ExpressJS, API, Axios, Rechart, MongoDB, JWT'
+    duration: '6 Months',
+    status: 'Completed',
+    batch: 'Batch 07',
+    credentialId: 'WEB7-1314',
+    certificatePdf: 'https://mdarh.github.io/certificates/programming-hero-web-development.pdf',
+    certificatePage: 'https://mdarh.github.io/#/experience',
+    technologies:
+      'JavaScript, HTML, CSS, React, Node.js, Express.js, MongoDB, Vite, React Router, JWT — MERN stack'
   }
 ]);
 </script>
@@ -123,12 +130,30 @@ const courses = ref([
           </div>
           <p class="text-gray-700 dark:text-gray-300 mb-2">{{ course.institution }}</p>
           <p class="text-gray-700 dark:text-gray-300 mb-2">
-            <span v-if="course.duration">Duration: {{ course.duration }}</span>
-            <span v-if="course.status">Status: {{ course.status }}</span>
+            <span v-if="course.duration">Duration: {{ course.duration }}. </span>
+            <span v-if="course.status">Status: {{ course.status }}.</span>
           </p>
-          <p class="text-sm text-gray-600 dark:text-gray-400">Technologies: {{ course.technologies }}</p>
+          <p v-if="course.batch" class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+            {{ course.batch }}<span v-if="course.credentialId"> · Credential ID {{ course.credentialId }}</span>
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Technologies: {{ course.technologies }}</p>
+          <div v-if="course.certificatePdf" class="flex flex-wrap gap-3">
+            <a
+              :href="course.certificatePdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary text-sm"
+            >
+              View certificate (PDF)
+            </a>
+            <router-link :to="{ path: '/', hash: '#certifications' }" class="btn btn-secondary text-sm">
+              Certificate on portfolio
+            </router-link>
+          </div>
         </div>
       </div>
     </section>
+
+    <CertificationsSection compact />
   </div>
 </template>

@@ -1,0 +1,1 @@
+import{_ as o,o as t,c as n,a as r}from"./index.vite-5944cfff.js";const l={};function a(s,e){return t(),n("div",null,[...e[0]||(e[0]=[r("h1",{className:"text-8xl font-bold underline"}," Hello world! Tailwind Not working ",-1)])])}const d=o(l,[["render",a]]);export{d as default};
