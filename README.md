@@ -75,31 +75,56 @@ Portfolio/
    yarn build
    ```
 
+## Profile data (`profile.json`)
+
+All portfolio **content** lives in one file at the repo root: **`profile.json`**. The Vue app imports it at **build time** via the `@profile` alias — do not duplicate projects or skills in components.
+
+After deploy: **https://mdarh.github.io/profile.json** (root file + `public/profile.json` symlink copied into `dist/` on build). The `MDARH/MDARH` README generator (or any consumer) should fetch that URL.
+
+Validate before build: `npm run validate:profile` (also runs in `build:pages`). Machine-readable JSON Schema: `profile.schema.json`.
+
+### Locked schema (root object only)
+
+```json
+{
+  "name": "string",
+  "title": "string",
+  "bio": "string",
+  "email": "string | null",
+  "links": { "github": "string (required)", "linkedin?": "string", "website?": "string", "...": "string" },
+  "skills": [{ "name": "string", "category": "string", "level": "0-100" }],
+  "projects": [{
+    "name": "string",
+    "description": "string",
+    "tech": ["string"],
+    "repo_url": "string | null",
+    "live_url": "string | null",
+    "private": "boolean",
+    "status": "live | in-progress | planned",
+    "featured": "boolean",
+    "visible": "boolean",
+    "image": "string | null"
+  }]
+}
+```
+
+**Rules for private repos:** set `private: true` and `repo_url: null`. The site never renders a repo link when `private` is true.
+
+**Site rendering:** projects with `visible: false` are omitted; featured items appear first; status badges (Live / In progress / Planned); if `private` and no `live_url`, show a Private badge.
+
+Optional **`certifications[]`** (additive; README Action can ignore): `{ name, issuer, description, skills[], credential_id, batch, issued (null if unknown), image_url, file_url, featured, visible }` — absolute `https://mdarh.github.io/...` URLs for assets under `public/certificates/`.
+
+Experience page copy is in `src/data/experience.json` (not part of `profile.json`).
+
 ## 🔄 Making Updates
 
-### Adding New Projects
+### Projects, skills, contact, bio
 
-1. Add project images to `src/assets/projects/<project-name>/`
-2. Update the projects array in `HomeView.vue`:
-   ```javascript
-   projects: [
-     {
-       title: "New Project",
-       description: "Project description",
-       image: "/src/assets/projects/new-project/image.png",
-       tags: ["Vue.js", "Tailwind CSS"]
-     }
-   ]
-   ```
+Edit **`profile.json`**, then run `npm run build:pages` and commit the updated root assets plus `profile.json`.
 
-### Updating Skills
+### Project screenshots
 
-Modify the skills array in `HomeView.vue`:
-```javascript
-skills: [
-  { name: "New Skill", level: 85 }
-]
-```
+Add images under `images/projects/<name>/` and set the project's `image` field in `profile.json`.
 
 ### Customizing Particle Effects
 
@@ -163,4 +188,20 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Support
 
-For support, email your-email@example.com or open an issue in the repository.
+For support, email mdarh411@gmail.com or open an issue in the repository.
+
+## GitHub Pages deployment
+
+This repository serves the **built** site from the `master` branch root (https://mdarh.github.io).
+
+1. Edit content in **`profile.json`** (projects, skills, contact, bio).
+2. Run `npm install` then `npm run build:pages` — this builds with Vite and copies `dist/` to the repo root (`index.html`, `404.html`, `assets/`).
+3. Commit and push to `master`.
+
+`index.vite.html` is the Vite dev entry; `index.html` at the root is the production bundle (do not edit by hand).
+
+### Optional GitHub Actions deploy
+
+`.github/workflows/deploy-pages.yml` builds on push to `master` and deploys via GitHub Actions. To use it, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. Until then, keep using branch deployment from `master` / root as today.
+
+The Cloudflare DNS Generator lives at `/CloudflareDNSGenerator/` from a separate repo; this workflow only updates the portfolio root and does not touch that path.

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mdarh.github.io/profile.schema.json",
+  "title": "MDARH portfolio profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "title", "bio", "email", "links", "skills", "projects"],
+  "properties": {
+    "name": { "type": "string" },
+    "title": { "type": "string" },
+    "bio": { "type": "string" },
+    "email": { "type": ["string", "null"], "format": "email" },
+    "links": {
+      "type": "object",
+      "required": ["github"],
+      "additionalProperties": { "type": "string" },
+      "properties": {
+        "github": { "type": "string", "format": "uri" },
+        "linkedin": { "type": "string", "format": "uri" },
+        "website": { "type": "string", "format": "uri" }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "category", "level"],
+        "properties": {
+          "name": { "type": "string" },
+          "category": { "type": "string" },
+          "level": { "type": "number", "minimum": 0, "maximum": 100 }
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description",
+          "tech",
+          "repo_url",
+          "live_url",
+          "private",
+          "status",
+          "featured",
+          "visible",
+          "image"
+        ],
+        "properties": {
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "tech": { "type": "array", "items": { "type": "string" } },
+          "repo_url": { "type": ["string", "null"], "format": "uri" },
+          "live_url": { "type": ["string", "null"], "format": "uri" },
+          "private": { "type": "boolean" },
+          "status": { "type": "string", "enum": ["live", "in-progress", "planned"] },
+          "featured": { "type": "boolean" },
+          "visible": { "type": "boolean" },
+          "image": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "issuer",
+          "description",
+          "skills",
+          "credential_id",
+          "batch",
+          "issued",
+          "image_url",
+          "file_url",
+          "featured",
+          "visible"
+        ],
+        "properties": {
+          "name": { "type": "string" },
+          "issuer": { "type": "string" },
+          "description": { "type": "string" },
+          "skills": { "type": "array", "items": { "type": "string" } },
+          "credential_id": { "type": "string" },
+          "batch": { "type": "string" },
+          "issued": { "type": ["string", "null"], "format": "date" },
+          "image_url": { "type": "string", "format": "uri" },
+          "file_url": { "type": "string", "format": "uri" },
+          "featured": { "type": "boolean" },
+          "visible": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

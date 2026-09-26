@@ -1,0 +1,26 @@
+{
+  "name": "mdarh-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --open /index.vite.html",
+    "build": "vite build",
+    "validate:profile": "node scripts/validate-profile.js",
+    "build:pages": "node scripts/validate-profile.js && vite build && node scripts/publish-github-pages.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^2.0.18",
+    "pinia": "^2.0.32",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "daisyui": "^3.7.7",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.1.4"
+  }
+}

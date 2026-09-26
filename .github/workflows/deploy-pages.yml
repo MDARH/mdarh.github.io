@@ -1,0 +1,49 @@
+# Optional: use this workflow if GitHub Pages "Source" is set to GitHub Actions.
+# Default for this repo remains "Deploy from branch / master / root" after running npm run build:pages locally or in CI.
+name: Build and deploy portfolio
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Prepare Pages artifact
+        run: |
+          cp -r images dist/images
+          cp favicon.ico dist/favicon.ico 2>/dev/null || cp public/favicon.ico dist/favicon.ico
+          cp profile.json dist/profile.json
+          cp dist/index.vite.html dist/index.html 2>/dev/null || true
+          cp dist/index.html dist/404.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
