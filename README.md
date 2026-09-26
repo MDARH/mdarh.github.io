@@ -77,40 +77,42 @@ Portfolio/
 
 ## Profile data (`profile.json`)
 
-All portfolio **content** lives in one file at the repo root: **`profile.json`**. The Vue app imports it at **build time** via the `@profile` alias (see `vite.config.js`) — do not duplicate projects or skills inside components.
+All portfolio **content** lives in one file at the repo root: **`profile.json`**. The Vue app imports it at **build time** via the `@profile` alias — do not duplicate projects or skills in components.
 
-After deploy, the same file is public at **https://mdarh.github.io/profile.json** (committed at the repo root; also copied into `dist/` via `public/profile.json`). Other repos (e.g. `MDARH/MDARH` profile README) can fetch that URL in a GitHub Action to regenerate skills/projects sections.
+After deploy: **https://mdarh.github.io/profile.json** (root file + `public/profile.json` symlink copied into `dist/` on build). The `MDARH/MDARH` README generator (or any consumer) should fetch that URL.
 
-### Schema (version 1)
+Validate before build: `npm run validate:profile` (also runs in `build:pages`). Machine-readable JSON Schema: `profile.schema.json`.
 
-| Field | Type | Description |
-|--------|------|-------------|
-| `schemaVersion` | number | Currently `1` |
-| `profile.name` | string | Display name (hero) |
-| `profile.title` | string | Job / role line |
-| `profile.description` | string | Short bio |
-| `profile.descriptions` | string[] | Rotating hero typewriter lines |
-| `profile.skills` | `{ name, level }[]` | Skill bars (`level` 0–100) |
-| `contact.email` | string | Email address |
-| `contact.phone` | string | Phone (optional display) |
-| `contact.social` | `{ platform, link, username, icon }[]` | Social links |
-| `projects[]` | object[] | Project cards (see below) |
-| `experience` | object | Experience page sections (optional for site; not required for profile README consumers) |
+### Locked schema (root object only)
 
-Each **`projects[]`** entry:
+```json
+{
+  "name": "string",
+  "title": "string",
+  "bio": "string",
+  "email": "string | null",
+  "links": { "github": "string (required)", "linkedin?": "string", "website?": "string", "...": "string" },
+  "skills": [{ "name": "string", "category": "string", "level": "0-100" }],
+  "projects": [{
+    "name": "string",
+    "description": "string",
+    "tech": ["string"],
+    "repo_url": "string | null",
+    "live_url": "string | null",
+    "private": "boolean",
+    "status": "live | in-progress | planned",
+    "featured": "boolean",
+    "visible": "boolean",
+    "image": "string | null"
+  }]
+}
+```
 
-| Field | Type | Description |
-|--------|------|-------------|
-| `id` | number | Stable id |
-| `title` | string | Project name |
-| `description` | string | Short summary |
-| `technologies` | string[] | Tech tags |
-| `link` | string | Live site URL, or `#` if none |
-| `image` | string | Path from site root (e.g. `./images/projects/...` or `./images/default-project-thumbnail.svg`) |
-| `github` | string | Public repo URL or `#` |
-| `featured` | boolean | Show on homepage |
-| `active` | boolean | If true, show “View Live” when `link` is valid |
-| `features` | string[] | Bullet list for project modal |
+**Rules for private repos:** set `private: true` and `repo_url: null`. The site never renders a repo link when `private` is true.
+
+**Site rendering:** projects with `visible: false` are omitted; featured items appear first; status badges (Live / In progress / Planned); if `private` and no `live_url`, show a Private badge.
+
+Experience page copy is in `src/data/experience.json` (not part of `profile.json`).
 
 ## 🔄 Making Updates
 

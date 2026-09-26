@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import experienceData from '@profile';
+import experienceData from '@/data/experience.json';
 
 const experience = experienceData.experience;
 

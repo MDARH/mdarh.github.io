@@ -1,0 +1,47 @@
+{
+  "title": "What I Do",
+  "sections": [
+    {
+      "title": "Full-Stack Development",
+      "items": [
+        "Build modern, scalable web applications using the latest technologies",
+        "Develop dynamic front-end applications with Vue.js, React.js, Inertia.js, and Livewire",
+        "Create responsive, high-performance UI/UX using Tailwind CSS",
+        "Architect and manage back-end systems using Laravel and FilamentPHP",
+        "Work with RESTful APIs and data-driven applications"
+      ]
+    },
+    {
+      "title": "Database Management",
+      "items": [
+        "Design and optimize databases using MySQL, MongoDB, and SQLite",
+        "Ensure high-performance queries and database security",
+        "Handle database migrations, indexing, and relationships efficiently"
+      ]
+    },
+    {
+      "title": "Server Management & Deployment",
+      "items": [
+        "Manage and configure VPS servers with Ubuntu and aaPanel",
+        "Deploy and maintain web applications with secure and optimized environments",
+        "Install, configure, and manage operating systems and server control panels"
+      ]
+    },
+    {
+      "title": "Error Handling & Problem-Solving",
+      "items": [
+        "Expert in debugging and resolving complex front-end and back-end issues",
+        "Optimize server performance, error handling, and system efficiency",
+        "Passionate about troubleshooting and finding effective solutions"
+      ]
+    },
+    {
+      "title": "WordPress Development",
+      "items": [
+        "Build and customize WordPress websites with Astra Premium Theme",
+        "Optimize and extend WordPress functionality using plugins and custom solutions",
+        "Ensure security, speed, and SEO best practices in WordPress development"
+      ]
+    }
+  ]
+}
