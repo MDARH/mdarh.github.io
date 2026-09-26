@@ -194,17 +194,13 @@
       "image": "./images/default-project-thumbnail.svg"
     },
     {
-      "name": "CapturedByHassan Auto Comment",
-      "description": "AI-assisted auto-reply system for the CapturedByHassan Facebook Page using Meta Graph API and webhooks.",
-      "tech": [
-        "Python",
-        "Meta Graph API",
-        "Webhooks"
-      ],
+      "name": "CapturedByHassan",
+      "description": "A FreelancerOS module that auto-posts to and auto-replies on Facebook pages.",
+      "tech": ["Laravel"],
       "repo_url": null,
       "live_url": null,
       "private": true,
-      "status": "planned",
+      "status": "in-progress",
       "featured": false,
       "visible": false,
       "image": "./images/default-project-thumbnail.svg"
