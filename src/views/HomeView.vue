@@ -45,14 +45,6 @@ const closeModal = () => {
   selectedProject.value = null;
 };
 
-/**
- * Handles image loading errors by setting a default thumbnail
- * @param {Event} event - The error event
- */
-const handleImageError = (event) => {
-  event.target.src = './images/default-project-thumbnail.svg';
-};
-
 onMounted(async () => {
     if (localStorage.getItem('darkMode') === 'true') {
         isDarkMode.value = true;
