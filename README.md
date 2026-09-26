@@ -163,4 +163,20 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Support
 
-For support, email your-email@example.com or open an issue in the repository.
+For support, email mdarh411@gmail.com or open an issue in the repository.
+
+## GitHub Pages deployment
+
+This repository serves the **built** site from the `master` branch root (https://mdarh.github.io).
+
+1. Edit content in `src/data/portfolio.json` (projects, skills, contact).
+2. Run `npm install` then `npm run build:pages` — this builds with Vite and copies `dist/` to the repo root (`index.html`, `404.html`, `assets/`).
+3. Commit and push to `master`.
+
+`index.vite.html` is the Vite dev entry; `index.html` at the root is the production bundle (do not edit by hand).
+
+### Optional GitHub Actions deploy
+
+`.github/workflows/deploy-pages.yml` builds on push to `master` and deploys via GitHub Actions. To use it, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. Until then, keep using branch deployment from `master` / root as today.
+
+The Cloudflare DNS Generator lives at `/CloudflareDNSGenerator/` from a separate repo; this workflow only updates the portfolio root and does not touch that path.
