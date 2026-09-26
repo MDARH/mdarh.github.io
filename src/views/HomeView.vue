@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
-import portfolioData from '@/data/portfolio.json';
+import portfolioData from '@profile';
 
 const isDarkMode = ref(localStorage.getItem('darkMode') === 'true' || false);
 const profile = portfolioData.profile;

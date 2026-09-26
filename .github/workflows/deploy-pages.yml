@@ -31,7 +31,9 @@ jobs:
         run: |
           cp -r images dist/images
           cp favicon.ico dist/favicon.ico 2>/dev/null || cp public/favicon.ico dist/favicon.ico
-          cp index.html dist/404.html
+          cp profile.json dist/profile.json
+          cp dist/index.vite.html dist/index.html 2>/dev/null || true
+          cp dist/index.html dist/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

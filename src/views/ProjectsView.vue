@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue';
-import portfolioData from '@/data/portfolio.json';
+import portfolioData from '@profile';
 
 const selectedProject = ref(null);
 
-// Use projects data from portfolio.json
+// Use projects from root profile.json (build-time import)
 const projects = ref(portfolioData.projects || []);
 
 const openModal = (project) => {

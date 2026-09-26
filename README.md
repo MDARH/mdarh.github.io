@@ -75,31 +75,52 @@ Portfolio/
    yarn build
    ```
 
+## Profile data (`profile.json`)
+
+All portfolio **content** lives in one file at the repo root: **`profile.json`**. The Vue app imports it at **build time** via the `@profile` alias (see `vite.config.js`) — do not duplicate projects or skills inside components.
+
+After deploy, the same file is public at **https://mdarh.github.io/profile.json** (committed at the repo root; also copied into `dist/` via `public/profile.json`). Other repos (e.g. `MDARH/MDARH` profile README) can fetch that URL in a GitHub Action to regenerate skills/projects sections.
+
+### Schema (version 1)
+
+| Field | Type | Description |
+|--------|------|-------------|
+| `schemaVersion` | number | Currently `1` |
+| `profile.name` | string | Display name (hero) |
+| `profile.title` | string | Job / role line |
+| `profile.description` | string | Short bio |
+| `profile.descriptions` | string[] | Rotating hero typewriter lines |
+| `profile.skills` | `{ name, level }[]` | Skill bars (`level` 0–100) |
+| `contact.email` | string | Email address |
+| `contact.phone` | string | Phone (optional display) |
+| `contact.social` | `{ platform, link, username, icon }[]` | Social links |
+| `projects[]` | object[] | Project cards (see below) |
+| `experience` | object | Experience page sections (optional for site; not required for profile README consumers) |
+
+Each **`projects[]`** entry:
+
+| Field | Type | Description |
+|--------|------|-------------|
+| `id` | number | Stable id |
+| `title` | string | Project name |
+| `description` | string | Short summary |
+| `technologies` | string[] | Tech tags |
+| `link` | string | Live site URL, or `#` if none |
+| `image` | string | Path from site root (e.g. `./images/projects/...` or `./images/default-project-thumbnail.svg`) |
+| `github` | string | Public repo URL or `#` |
+| `featured` | boolean | Show on homepage |
+| `active` | boolean | If true, show “View Live” when `link` is valid |
+| `features` | string[] | Bullet list for project modal |
+
 ## 🔄 Making Updates
 
-### Adding New Projects
+### Projects, skills, contact, bio
 
-1. Add project images to `src/assets/projects/<project-name>/`
-2. Update the projects array in `HomeView.vue`:
-   ```javascript
-   projects: [
-     {
-       title: "New Project",
-       description: "Project description",
-       image: "/src/assets/projects/new-project/image.png",
-       tags: ["Vue.js", "Tailwind CSS"]
-     }
-   ]
-   ```
+Edit **`profile.json`**, then run `npm run build:pages` and commit the updated root assets plus `profile.json`.
 
-### Updating Skills
+### Project screenshots
 
-Modify the skills array in `HomeView.vue`:
-```javascript
-skills: [
-  { name: "New Skill", level: 85 }
-]
-```
+Add images under `images/projects/<name>/` and set the project's `image` field in `profile.json`.
 
 ### Customizing Particle Effects
 
@@ -169,7 +190,7 @@ For support, email mdarh411@gmail.com or open an issue in the repository.
 
 This repository serves the **built** site from the `master` branch root (https://mdarh.github.io).
 
-1. Edit content in `src/data/portfolio.json` (projects, skills, contact).
+1. Edit content in **`profile.json`** (projects, skills, contact, bio).
 2. Run `npm install` then `npm run build:pages` — this builds with Vite and copies `dist/` to the repo root (`index.html`, `404.html`, `assets/`).
 3. Commit and push to `master`.
 

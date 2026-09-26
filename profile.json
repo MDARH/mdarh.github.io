@@ -1,42 +1,84 @@
 {
+  "schemaVersion": 1,
   "profile": {
     "name": "I'm Abdur Razzaque (Hassan)",
     "title": "Full Stack Developer | Laravel, React & Vue Specialist",
-    "description": "I build modern web applications with Laravel, React, Vue, and TypeScript — from SaaS platforms to e-commerce and business tools.",
+    "description": "I build personal and open web apps with Laravel, React, Vue, and TypeScript — from accounting tools to e-commerce and learning platforms.",
     "descriptions": [
-      "building accounting, CRM, and LMS platforms for bCloud and Believe One IT.",
-      "shipping Laravel + React (Inertia) and Vue.js products with Tailwind CSS.",
+      "building my own accounting, CRM, and LMS web apps.",
+      "shipping Laravel + React (Inertia) and Vue.js projects with Tailwind CSS.",
       "creating seamless user experiences with clean, maintainable code.",
       "full-stack development across PHP, JavaScript, and TypeScript.",
-      "deploying and maintaining production apps on VPS and cloud hosting."
+      "deploying and maintaining my apps on VPS and cloud hosting."
     ],
     "skills": [
-      { "name": "Laravel", "level": 90 },
-      { "name": "PHP", "level": 90 },
-      { "name": "Vue.js", "level": 90 },
-      { "name": "React", "level": 88 },
-      { "name": "Inertia.js", "level": 85 },
-      { "name": "TypeScript", "level": 82 },
-      { "name": "JavaScript", "level": 90 },
-      { "name": "Tailwind CSS", "level": 92 },
-      { "name": "MySQL", "level": 85 },
-      { "name": "Blade", "level": 85 },
-      { "name": "Python", "level": 75 },
-      { "name": "Git", "level": 85 }
+      {
+        "name": "Laravel",
+        "level": 90
+      },
+      {
+        "name": "PHP",
+        "level": 90
+      },
+      {
+        "name": "Vue.js",
+        "level": 90
+      },
+      {
+        "name": "React",
+        "level": 88
+      },
+      {
+        "name": "Inertia.js",
+        "level": 85
+      },
+      {
+        "name": "TypeScript",
+        "level": 82
+      },
+      {
+        "name": "JavaScript",
+        "level": 90
+      },
+      {
+        "name": "Tailwind CSS",
+        "level": 92
+      },
+      {
+        "name": "MySQL",
+        "level": 85
+      },
+      {
+        "name": "Blade",
+        "level": 85
+      },
+      {
+        "name": "Python",
+        "level": 75
+      },
+      {
+        "name": "Git",
+        "level": 85
+      }
     ]
   },
   "projects": [
     {
       "id": 19,
       "title": "bCloud Accounting",
-      "description": "Cloud accounting software inspired by the bCloud product suite — invoicing, ledger, and business finance workflows for SMEs.",
+      "description": "Cloud accounting app I built — invoicing, ledger, and finance workflows.",
       "image": "./images/default-project-thumbnail.svg",
-      "technologies": ["PHP", "Laravel", "MySQL", "Tailwind CSS"],
+      "technologies": [
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "Tailwind CSS"
+      ],
       "features": [
-        "Accounting and invoicing workflows",
-        "Business finance tracking",
-        "Multi-user operational flows",
-        "Production deployment on bCloud infrastructure"
+        "Personal accounting app",
+        "Invoicing and ledger",
+        "Multi-user flows",
+        "Production deployment"
       ],
       "link": "https://acc.bcloud.ac",
       "github": "#",
@@ -48,7 +90,12 @@
       "title": "SWR eCommerce",
       "description": "Full-featured e-commerce store with catalog, cart, and order management for retail customers in Bangladesh.",
       "image": "./images/default-project-thumbnail.svg",
-      "technologies": ["Laravel", "Blade", "PHP", "MySQL"],
+      "technologies": [
+        "Laravel",
+        "Blade",
+        "PHP",
+        "MySQL"
+      ],
       "features": [
         "Product catalog and categories",
         "Shopping cart and checkout",
@@ -65,7 +112,12 @@
       "title": "Srabon Academy",
       "description": "Course management and learning platform (English Orjon) for online education, enrollment, and content delivery.",
       "image": "./images/default-project-thumbnail.svg",
-      "technologies": ["Laravel", "Blade", "PHP", "MySQL"],
+      "technologies": [
+        "Laravel",
+        "Blade",
+        "PHP",
+        "MySQL"
+      ],
       "features": [
         "Course catalog and enrollment",
         "Student progress tracking",
@@ -82,7 +134,11 @@
       "title": "Cloudflare DNS Generator",
       "description": "Public browser tool to generate Cloudflare DNS records — deployed as a GitHub Pages sub-site alongside this portfolio.",
       "image": "./images/default-project-thumbnail.svg",
-      "technologies": ["HTML", "JavaScript", "Cloudflare API"],
+      "technologies": [
+        "HTML",
+        "JavaScript",
+        "Cloudflare API"
+      ],
       "features": [
         "DNS record generation helpers",
         "Client-side workflow for quick setup",
@@ -97,9 +153,15 @@
     {
       "id": 23,
       "title": "EverFlow CRM",
-      "description": "EverFlow CRM — Laravel 13 + React (Inertia) rebuild of the live CRM product with modern SPA UX and API-driven workflows.",
+      "description": "EverFlow CRM — my Laravel 13 + React (Inertia) CRM with SPA UX and API-driven workflows.",
       "image": "./images/default-project-thumbnail.svg",
-      "technologies": ["Laravel", "React", "Inertia.js", "TypeScript", "MySQL"],
+      "technologies": [
+        "Laravel",
+        "React",
+        "Inertia.js",
+        "TypeScript",
+        "MySQL"
+      ],
       "features": [
         "CRM pipelines and contact management",
         "Inertia-powered React front end",
@@ -114,9 +176,14 @@
     {
       "id": 24,
       "title": "LIMS 2.0",
-      "description": "Laboratory Information Management System — Laravel 13 + React (Inertia) + MySQL port of the production LIMS at lims.bcloud.ac.",
+      "description": "Laboratory Information Management System — Laravel 13 + React (Inertia) + MySQL rebuild of my LIMS stack.",
       "image": "./images/default-project-thumbnail.svg",
-      "technologies": ["Laravel", "React", "Inertia.js", "MySQL"],
+      "technologies": [
+        "Laravel",
+        "React",
+        "Inertia.js",
+        "MySQL"
+      ],
       "features": [
         "Lab workflow and sample tracking",
         "Reporting and operational dashboards",
@@ -133,7 +200,11 @@
       "title": "bCloud Developer Toolkit",
       "description": "Browser extension toolkit for bCloud developers — utilities that speed up day-to-day integration and debugging work.",
       "image": "./images/default-project-thumbnail.svg",
-      "technologies": ["JavaScript", "Browser Extension", "HTML"],
+      "technologies": [
+        "JavaScript",
+        "Browser Extension",
+        "HTML"
+      ],
       "features": [
         "Developer-focused browser utilities",
         "bCloud integration helpers",
@@ -149,7 +220,11 @@
       "title": "CapturedByHassan Auto Comment",
       "description": "AI-assisted auto-reply system for the CapturedByHassan Facebook Page using Meta Graph API and webhooks.",
       "image": "./images/default-project-thumbnail.svg",
-      "technologies": ["Python", "Meta Graph API", "Webhooks"],
+      "technologies": [
+        "Python",
+        "Meta Graph API",
+        "Webhooks"
+      ],
       "features": [
         "Webhook-driven comment handling",
         "Context-aware reply generation",
@@ -164,9 +239,15 @@
     {
       "id": 1,
       "title": "AK Halal Food",
-      "description": "A comprehensive food e-commerce platform for a Japan-based company. Features include product management, order processing, and delivery tracking.",
+      "description": "Food e-commerce app with product management, order processing, and delivery tracking.",
       "image": "./images/projects/akhalalfood/akfood-1.png",
-      "technologies": ["Laravel", "MySQL", "aaPanel", "VPS", "Tailwind CSS"],
+      "technologies": [
+        "Laravel",
+        "MySQL",
+        "aaPanel",
+        "VPS",
+        "Tailwind CSS"
+      ],
       "features": [
         "Online food ordering system",
         "Restaurant menu management",
@@ -182,9 +263,14 @@
     {
       "id": 2,
       "title": "BoneIT",
-      "description": "A modern technology company website showcasing services and solutions. Built with WordPress for easy content management.",
+      "description": "Technology company marketing site built with WordPress for content management.",
       "image": "./images/projects/boneit/boneit-1.png",
-      "technologies": ["WordPress", "PHP", "MySQL", "Custom Theme"],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "MySQL",
+        "Custom Theme"
+      ],
       "features": [
         "Custom WordPress theme",
         "Service portfolio",
@@ -202,7 +288,12 @@
       "title": "BSCW Society",
       "description": "A comprehensive organization website built with Laravel, featuring member management and event organization.",
       "image": "./images/projects/bscwsociety/screenshot-1.png",
-      "technologies": ["Laravel", "Vue.js", "MySQL", "Tailwind CSS"],
+      "technologies": [
+        "Laravel",
+        "Vue.js",
+        "MySQL",
+        "Tailwind CSS"
+      ],
       "features": [
         "Member management system",
         "Event calendar and organization",
@@ -218,9 +309,14 @@
     {
       "id": 4,
       "title": "Coral Condoms",
-      "description": "A product showcase website for a major company, built with WordPress for optimal content management.",
+      "description": "Product showcase site built with WordPress.",
       "image": "./images/projects/coral-condoms/screenshot-1.png",
-      "technologies": ["WordPress", "PHP", "MySQL", "Custom Theme"],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "MySQL",
+        "Custom Theme"
+      ],
       "features": [
         "Product catalog and showcase",
         "Content management system",
@@ -238,7 +334,12 @@
       "title": "PathShala CBS",
       "description": "An interactive book reading platform built with Laravel, providing a comprehensive reading experience.",
       "image": "./images/projects/pathshala-cbs/Screenshot 2023-04-30 222444.png",
-      "technologies": ["Laravel", "Vue.js", "MySQL", "Tailwind CSS"],
+      "technologies": [
+        "Laravel",
+        "Vue.js",
+        "MySQL",
+        "Tailwind CSS"
+      ],
       "features": [
         "Digital book library",
         "Reading progress tracking",
@@ -256,7 +357,12 @@
       "title": "Zippy Footware",
       "description": "A full-featured e-commerce platform built with Laravel and Vue.js, specializing in footwear products.",
       "image": "./images/projects/zippyfootware/screenshot-1.png",
-      "technologies": ["Laravel", "Vue.js", "MySQL", "Tailwind CSS"],
+      "technologies": [
+        "Laravel",
+        "Vue.js",
+        "MySQL",
+        "Tailwind CSS"
+      ],
       "features": [
         "Product catalog and search",
         "Shopping cart and checkout",
@@ -274,7 +380,12 @@
       "title": "SSC1982",
       "description": "A comprehensive organization website built with Laravel, featuring member management and event organization.",
       "image": "./images/projects/ssc1982/screenshot-1.png",
-      "technologies": ["Laravel", "Vue.js", "MySQL", "Tailwind CSS"],
+      "technologies": [
+        "Laravel",
+        "Vue.js",
+        "MySQL",
+        "Tailwind CSS"
+      ],
       "features": [
         "Member management system",
         "Event calendar and organization",
@@ -292,7 +403,11 @@
       "title": "Amdadiya",
       "description": "E-commerce platform specializing in hard copy book sales, similar to Rokomari.",
       "image": "./images/projects/amdadiya/screenshot-1.png",
-      "technologies": ["WordPress", "PHP", "MySQL"],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "MySQL"
+      ],
       "features": [
         "Business portfolio",
         "Service showcase",
@@ -307,14 +422,19 @@
     {
       "id": 9,
       "title": "bCloud Platform",
-      "description": "Corporate platform for bCloud cloud accounting and business software — product marketing, server information, and customer entry points.",
+      "description": "Landing and hub for my bCloud software suite — product pages and app entry points.",
       "image": "./images/projects/bcloud/screenshot-1.png",
-      "technologies": ["Laravel", "Vue.js", "MySQL", "Tailwind CSS"],
+      "technologies": [
+        "Laravel",
+        "Vue.js",
+        "MySQL",
+        "Tailwind CSS"
+      ],
       "features": [
-        "Cloud product showcase",
-        "Service and pricing pages",
-        "Customer onboarding flows",
-        "Integration with bCloud apps"
+        "Product showcase",
+        "Pricing and info pages",
+        "Onboarding flows",
+        "Links to related apps"
       ],
       "link": "https://bcloud.ac",
       "github": "#",
@@ -324,13 +444,17 @@
     {
       "id": 10,
       "title": "BD Apex",
-      "description": "Software selling company with corporate landing page featuring product information and server solutions.",
+      "description": "Corporate-style landing page for software products and server hosting info.",
       "image": "./images/projects/bdapex/screenshot-1.png",
-      "technologies": ["WordPress", "PHP", "MySQL"],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "MySQL"
+      ],
       "features": [
-        "Business consulting",
-        "Service portfolio",
-        "Client testimonials",
+        "Product highlights",
+        "Service pages",
+        "Testimonials section",
         "Contact system"
       ],
       "link": "https://bdapex.com",
@@ -343,7 +467,11 @@
       "title": "BD Tech Holdings",
       "description": "Real estate business website built with WordPress and Astra theme.",
       "image": "./images/projects/bdtechholdings/screenshot-1.png",
-      "technologies": ["WordPress", "PHP", "MySQL"],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "MySQL"
+      ],
       "features": [
         "Company portfolio",
         "Investment showcase",
@@ -360,7 +488,11 @@
       "title": "DCR Foundation",
       "description": "Non-profit foundation website.",
       "image": "./images/projects/dcrfoundation/screenshot-1.png",
-      "technologies": ["WordPress", "PHP", "MySQL"],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "MySQL"
+      ],
       "features": [
         "Foundation activities",
         "Donation system",
@@ -375,9 +507,13 @@
     {
       "id": 13,
       "title": "Engineer Jalil Khan",
-      "description": "Professional website for Transportation Engineer at Caltrans, built with WordPress.",
+      "description": "Professional portfolio site built with WordPress — projects, resume, and contact.",
       "image": "./images/projects/engineerjalilkhan/screenshot-1.png",
-      "technologies": ["WordPress", "PHP", "MySQL"],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "MySQL"
+      ],
       "features": [
         "Professional portfolio",
         "Project showcase",
@@ -394,7 +530,11 @@
       "title": "Fenirkal",
       "description": "News portal website built with Laravel for publishing and content management.",
       "image": "./images/projects/fenirkal/screenshot-1.png",
-      "technologies": ["WordPress", "PHP", "MySQL"],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "MySQL"
+      ],
       "features": [
         "Modern design",
         "Service showcase",
@@ -411,7 +551,11 @@
       "title": "Frentors",
       "description": "Online video course system and Learning Management System (LMS) platform.",
       "image": "./images/projects/frentors/screenshot-1.png",
-      "technologies": ["Laravel", "Vue.js", "MySQL"],
+      "technologies": [
+        "Laravel",
+        "Vue.js",
+        "MySQL"
+      ],
       "features": [
         "Mentor matching",
         "Course management",
@@ -428,7 +572,11 @@
       "title": "Graffiti Bangladesh",
       "description": "Professional voice artist portfolio website built with WordPress.",
       "image": "./images/projects/graffitybangladesh/screenshot-1.png",
-      "technologies": ["WordPress", "PHP", "MySQL"],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "MySQL"
+      ],
       "features": [
         "Art gallery",
         "Artist profiles",
@@ -443,9 +591,13 @@
     {
       "id": 17,
       "title": "Manager Italia Blog",
-      "description": "Corporate business website for accounting software sales and marketing.",
+      "description": "Blog and marketing site for accounting software topics.",
       "image": "./images/projects/manageritalia/screenshot-1.png",
-      "technologies": ["WordPress", "PHP", "MySQL"],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "MySQL"
+      ],
       "features": [
         "Blog management",
         "Article publishing",
@@ -462,7 +614,11 @@
       "title": "My Asset BD",
       "description": "Under construction website template with Laravel backend CMS for dynamic content management.",
       "image": "./images/projects/myassetbd/screenshot-1.png",
-      "technologies": ["Laravel", "Vue.js", "MySQL"],
+      "technologies": [
+        "Laravel",
+        "Vue.js",
+        "MySQL"
+      ],
       "features": [
         "Asset tracking",
         "Portfolio management",

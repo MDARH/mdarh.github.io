@@ -1,5 +1,5 @@
 <script setup>
-import portfolio from '@/data/portfolio.json';
+import portfolio from '@profile';
 const { contact } = portfolio;
 
 // Social media icons and colors

@@ -29,7 +29,8 @@ const preserve = new Set([
   'tailwind.config.js',
   'postcss.config.js',
   'index.vite.html',
-  '.gitignore'
+  '.gitignore',
+  'profile.json'
 ])
 
 function copyRecursive(src, dest) {
@@ -67,4 +68,8 @@ if (builtIndex) {
   console.warn('No index.html or index.vite.html found in dist/.')
 }
 
-console.log('Published dist/ to repository root (index.html, 404.html, assets/).')
+if (!fs.existsSync(path.join(root, 'profile.json'))) {
+  console.warn('profile.json missing at repo root — add it before deploy.')
+}
+
+console.log('Published dist/ to repository root (index.html, 404.html, assets/). profile.json is served from repo root.')
